@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "previsao-tempo-entrega"
+version = "0.4.0"
+description = "Previsão de tempo de entrega com machine learning: gradient boosting monotônico e faixa calibrada."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "pandas>=2.1", "scikit-learn>=1.4", "matplotlib>=3.8", "joblib>=1.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff", "mypy"]
+
+[project.scripts]
+previsao-entrega = "previsao_entrega.__main__:main"
+
+[tool.setuptools]
+packages = ["previsao_entrega"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "SIM", "RUF", "PL", "C4", "PIE", "RET"]
+ignore = ["PLR2004", "RUF001", "RUF002", "RUF003", "PLR0913"]
+
+[tool.mypy]
+# 3.12 porque os tipos do numpy instalado usam sintaxe 3.12; a compatibilidade com 3.10 é conferida pelo ruff.
+python_version = "3.12"
+ignore_missing_imports = true

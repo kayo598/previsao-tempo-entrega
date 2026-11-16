@@ -1,0 +1,107 @@
+{
+  "linhas_treino": 16000,
+  "linhas_teste": 4000,
+  "modelos": [
+    {
+      "modelo": "baseline (mediana)",
+      "mae_cv": 9.263,
+      "mae_cv_desvio": 0.10861645176376318,
+      "mae_teste": 9.32425,
+      "rmse_teste": 11.992921245468095,
+      "r2_teste": -0.017597234354602476,
+      "dentro_10min": 0.62725
+    },
+    {
+      "modelo": "regressão linear",
+      "mae_cv": 3.546709952336843,
+      "mae_cv_desvio": 0.06318527571662229,
+      "mae_teste": 3.544150780177715,
+      "rmse_teste": 5.235821650515675,
+      "r2_teste": 0.8060473831208543,
+      "dentro_10min": 0.955
+    },
+    {
+      "modelo": "gradient boosting",
+      "mae_cv": 3.539631913418263,
+      "mae_cv_desvio": 0.0719536355314132,
+      "mae_teste": 3.5117296640184334,
+      "rmse_teste": 5.207701512762418,
+      "r2_teste": 0.8081251194456984,
+      "dentro_10min": 0.956
+    }
+  ],
+  "segmentos": [
+    {
+      "segmento": "todas",
+      "entregas": 4000,
+      "mae regressão linear": 3.544150780177715,
+      "viés regressão linear": -0.07162660626318483,
+      "mae gradient boosting": 3.5117296640184334,
+      "viés gradient boosting": -0.14027126288223174
+    },
+    {
+      "segmento": "com chuva",
+      "entregas": 589,
+      "mae regressão linear": 3.675000170837188,
+      "viés regressão linear": 0.2152696108968775,
+      "mae gradient boosting": 3.2897757561607217,
+      "viés gradient boosting": 0.11427534173968595
+    },
+    {
+      "segmento": "mais de 5 km",
+      "entregas": 524,
+      "mae regressão linear": 3.9267236008026347,
+      "viés regressão linear": 0.1838500081624249,
+      "mae gradient boosting": 3.6047848757255525,
+      "viés gradient boosting": 0.23131697369228113
+    },
+    {
+      "segmento": "chuva e mais de 5 km",
+      "entregas": 76,
+      "mae regressão linear": 4.197980126513644,
+      "viés regressão linear": -3.5613913526058494,
+      "mae gradient boosting": 3.0176930684985814,
+      "viés gradient boosting": -0.9950036897462206
+    }
+  ],
+  "faixa_p10_p90": {
+    "sem_calibrar": {
+      "cobertura": 0.76675,
+      "largura_media_min": 9.94075,
+      "chega_depois": 0.11175
+    },
+    "calibrada": {
+      "cobertura": 0.8055,
+      "largura_media_min": 10.61,
+      "chega_depois": 0.10275
+    },
+    "margem_min": 0.33284442580120555
+  },
+  "importancia_min": {
+    "distancia_km": 5.09,
+    "pedidos_na_fila": 4.7,
+    "categoria": 2.08,
+    "itens": 0.46,
+    "chuva": 0.33,
+    "hora": 0.11,
+    "dia_semana": -0.01
+  },
+  "limites_do_treino": {
+    "hora": [
+      10.5,
+      23.9
+    ],
+    "distancia_km": [
+      0.3,
+      10.0
+    ],
+    "itens": [
+      1.0,
+      9.0
+    ],
+    "pedidos_na_fila": [
+      0.0,
+      25.0
+    ]
+  }
+}
